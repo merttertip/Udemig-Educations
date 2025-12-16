@@ -8,7 +8,7 @@
 This project is an aesthetically pleasing Udemig software development training promotional website. Its elegant design attracts attention.
 </p>
 
-    ![](Screen.gif)
+    ![](screen.gif)
 
 <hr>
 
