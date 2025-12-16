@@ -8,8 +8,6 @@
 This project is an aesthetically pleasing Udemig software development training promotional website. Its elegant design attracts attention.
 </p>
 
-    ![](screen.gif)
-
 <hr>
 
 <h2>Projenin Özellikleri </h2>
