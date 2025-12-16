@@ -1,0 +1,139 @@
+header {
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 0 0 16px 16px;
+  // TODO box shadow
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  @extend .flex;
+  padding: 27px 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  // Logo
+
+  .logo {
+    font-size: 33px;
+    font-weight: 700;
+    white-space: nowrap;
+    // ^ alan olmasa bile diğer satırlara kaymayı kapatıyoruz
+
+    // span
+    span {
+      color: $main-color;
+    }
+
+    @include laptop {
+      font-size: 25px;
+    }
+  }
+
+  // navbar
+
+  .header-nav {
+    @include laptop {
+      display: none;
+    }
+    ul {
+      @extend .flex;
+      gap: 20px;
+
+      li a {
+        font-size: $p-font;
+        font-weight: 500;
+        text-transform: uppercase;
+        display: block; // inline elementlerde transform özellikleri (örn. scale) kullanılmadığından block olarak belirleriz.
+        @extend .transition;
+
+        &:hover {
+          scale: 1.2;
+          color: $main-color;
+        }
+      }
+    }
+  }
+
+  // Sağ kısım
+
+  .right-area {
+    @extend .flex;
+
+    .social-links {
+      @include mini-tablet {
+        display: none !important;
+      }
+    }
+
+    a {
+      font-size: 20px;
+      margin: 0 15px;
+      cursor: pointer;
+      @extend .transition;
+
+      &:hover {
+        color: $main-color;
+        transform: translateY(-3px);
+      }
+
+      &:first-child {
+        font-size: $p-font;
+      }
+    }
+
+    #menu-btn {
+      display: none; // normalde menü açma butonu gözükmesin
+      @include laptop {
+        // ama laptop boyutunun (1300px) altına düştüğünde gözükmeye başlasın
+        display: block !important;
+      }
+    }
+  }
+}
+
+// Responsive menü ------- Headerdaki menü ile birbirinden bağımsız iki menü yaptık, bu mnenü .active classına sahipken opaklığı 1 oluyor yani görünür oluyor.
+
+// Sahip değilken ise opacity:0'dan ötürü görünmez oluyor.
+
+#menu {
+  @extend .transition;
+  position: fixed;
+  opacity: 0;
+  top: 100px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 15px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  // görünmez iken tıklanabilmeyi kapat
+  pointer-events: none;
+
+  // TODO box shadow
+  // TODO arkaplanı bulanıklaştır
+
+  ul {
+    @extend .flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li a {
+      font-size: $p-font;
+      font-weight: 500;
+      text-transform: uppercase;
+      display: block; // inline elementlerde transform özellikleri (örn. scale) kullanılmadığından block olarak belirleriz.
+      @extend .transition;
+
+      &:hover {
+        scale: 1.2;
+        color: $main-color;
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1 !important;
+    pointer-events: all; // menu aktif iken tıklanabilir yap.
+  }
+}

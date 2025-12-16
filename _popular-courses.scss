@@ -1,0 +1,60 @@
+.popular-courses {
+  //Title
+  .center {
+    text-align: center;
+    h2 {
+      font-size: $h2-font;
+      font-weight: 800;
+    }
+  }
+  //Content
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+
+    // Card
+    .card {
+      position: relative;
+      &:hover > img {
+        scale: 1.05;
+      }
+      img {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        filter: brightness(70%);
+        @extend .transition;
+      }
+
+      .info {
+        position: absolute;
+        bottom: 40px;
+        left: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        h4 {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 18px;
+
+          i {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+  //Button
+  .btn-course {
+    @extend .btn;
+    & button {
+      @include button;
+    }
+  }
+}
