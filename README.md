@@ -4,6 +4,10 @@
     Bu proje göze hitap eden estetik bir Udemig yazılım geliştirme eğitim tanıtım web sitesidir. Zarif dizaynıyla dikkatleri çekmektedir.
 </p>
 
+<p>
+This project is an aesthetically pleasing Udemig software development training promotional website. Its elegant design attracts attention.
+</p>
+
     ![](Screen.gif)
 
 <hr>
@@ -19,12 +23,6 @@
 </ul>
 
 <hr>
-
-<h1>Udemig Educations</h1>
-
-<p>
-This project is an aesthetically pleasing Udemig software development training promotional website. Its elegant design attracts attention.
-</p>
 
 <h2>Project Features</h2>
 
